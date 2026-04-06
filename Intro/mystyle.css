@@ -1,0 +1,14 @@
+.a{
+    color : red;
+    text-decoration: underline;
+    border : 2px solid black;
+}
+
+#b{
+    color : rgb(17, 51, 98);
+    text-decoration: underline;
+    border : 2px solid black;
+}
+h1{
+    color : green;
+}
