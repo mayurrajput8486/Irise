@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table tag in HTML</title>
+    <link rel="stylesheet" href="./table.css">
+</head>
+<body>
+    <table border="2" cellpadding="20px" cellspacing="5px">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>User Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Rohit Sharma</td>
+                <td>rohit@gmail.com</td>
+                <td>Mumbai</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Virat</td>
+                <td>virat@gmail.com</td>
+                <td rowspan="3">Delhi</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Ashish Nehra</td>
+                <td>ashish@gmail.com</td>
+                <!-- <td>Delhi</td> -->
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Rishabh Pant</td>
+                <td>rishabh@gmail.com</td>
+                <!-- <td>Delhi</td> -->
+            </tr>
+            <tr>
+                <td>105</td>
+                <td>Mithali Raj</td>
+                <td> - </td>
+                <td>Mumbai</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4">Above all players contract is renew !!!</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
