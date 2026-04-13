@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List in HTML</title>
+</head>
+<body>
+    <h2>Ordered List - ol, li tag</h2>
+    <h3>Create List of Any 5 Languages</h3>
+    <ol start="101" reversed>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Python</li>
+        <li>GoLang</li>
+        <li>Java</li>
+    </ol>
+
+    <!-- type - A | a |  1 | I | i-->
+    <!-- <ol type="a" >
+        <li>Sachin</li>
+        <li>Virat</li>
+        <li>Rohit</li>
+        <li>MS Dhoni</li>
+        <li>Hardik</li>
+    </ol> -->
+
+    <ol style="list-style-type: upper-roman;">
+        <li>Sachin</li>
+        <li>Virat</li>
+        <li>Rohit</li>
+        <li>MS Dhoni</li>
+        <li>Hardik</li>
+    </ol> 
+
+    <h2>Unordered List - ul, li</h2>
+    <!-- type - disc(default) | circle | square -->
+    <ul type="disc">
+        <li>Mango</li>
+        <li>Grapes</li>
+        <li>Apple</li>
+        <li>Watermelon</li>
+        <li>Orange</li>
+    </ul>
+
+    <ul style="list-style-type: '&#128512;'">
+        <li>Mango</li>
+        <li>Grapes</li>
+        <li>Apple</li>
+        <li>Watermelon</li>
+        <li>Orange</li>
+        <li>Sweet Lime</li>
+    </ul>
+
+    <h2>Nested List</h2>
+    <ol>
+        <li>Car</li>
+        <li>Bike</li>
+        <ul type="disc">
+            <li>Electric Bike</li>
+            <li>Super Bike</li>
+            <li>Bike</li>
+        </ul>
+        <li>Plane</li>
+        <ul type="disc">
+            <li>Fighter Plane</li>
+            <li>Commercial Plane</li>
+            <li>Private Plane</li>
+        </ul>
+        <li>Helicopter</li>
+    </ol>
+
+    <!-- fixed deposit, ROI-->
+    <h2>Description List - dl, dt, dd</h2>
+    <dl>
+        <dt>HTML</dt>
+        <dd>
+            HTML is used to create structure of webpage
+        </dd>
+        <dd>
+            HTML consist of three main part - tag, elements and attributes
+        </dd>
+        <dt>JavaScript</dt>
+        <dd>JavaScript is used to provide dynamic content </dd>
+    </dl>
+</body>
+</html>
