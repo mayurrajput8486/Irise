@@ -1,3 +1,21 @@
 h2{
     text-align: center;
 }
+.comp{
+    color: red;
+}
+.form-field{
+    margin-bottom: 10px;
+    display: flex;
+}
+/* 
+    display : flex - label and input field must in single row 
+                   - flex value is arrange data in rows and column
+                   - always use flex in parent element
+
+*/
+.input-label{
+   /*  border: 2px solid; */
+    width: 150px;
+    /* display: block; */
+}
