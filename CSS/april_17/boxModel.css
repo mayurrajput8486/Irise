@@ -1,7 +1,10 @@
+
+/* Universal Selector */
 *{
     box-sizing: border-box;
 }
 
+/* element selector */
 h1{
     border: 8px solid;
     padding: 25px;
@@ -14,6 +17,8 @@ h2{
 button{
     padding: 10px;
 }
+
+/* class selector */
 .p1{
     border: 4px solid;
     width: 250px;
