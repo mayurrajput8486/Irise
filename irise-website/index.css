@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------- navbar ------------------------------------------ */
+.navbar {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    display: flex;
+    border-bottom: 4px solid lawngreen;
+    
+}
+
+.brand-name {
+    width: 20%;
+    height: 70px;
+    font-size: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 8px;
+    color: lawngreen;
+}
+
+.navs {
+    width: 80%;
+    height: 70px;
+}
+
+.items {
+    list-style-type: none;
+    font-size: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    display: flex;
+    gap: 50px;
+    justify-content: end;
+    align-items: center;
+    height: 70px;
+    color: lawngreen;
+}
+
+.item {
+    letter-spacing: 3.5px;
+}
+
+.item:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------hero--------------------------------------------- */
+.hero {
+    width: 100%;
+    height: 675px;
+    background: #000000;
+    background: linear-gradient(350deg, rgba(0, 0, 0, 1) 0%, rgba(14, 41, 2, 1) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+.hero-tagline {
+    color: lawngreen;
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+    border: 2px solid;
+    width: 40%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 5px;
+    border-radius: 30px;
+    animation: glowingBar 2s infinite alternate;
+}
+
+.hero-content {
+    animation: pulse 2s infinite;
+}
+
+@keyframes glowingBar {
+    0% {
+        box-shadow: 0px 0px 5px lawngreen;
+    }
+
+    50% {
+        box-shadow: 0px 0px 15px lawngreen;
+    }
+
+    100% {
+        box-shadow: 0px 0px 30px lawngreen;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.1;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+.hero-heading {
+    font-size: 100px;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    letter-spacing: 5px;
+    word-spacing: 100px;
+}
+
+.hero-heading span {
+    color: lawngreen;
+}
+
+.hero-title {
+    color: aliceblue;
+    position: relative;
+    top: 250px;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+}
+
+.hero-footer {
+    color: lawngreen;
+    position: relative;
+    top: 300px;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    width: 35%;
+    height: 50px;
+    border: 2px solid;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bgColor 6s infinite;
+}
+
+@keyframes bgColor {
+    0% {
+        background-color: black;
+    }
+
+    20% {
+        background-color: darkgreen;
+        color: white;
+    }
+
+    40% {
+        background-color: goldenrod;
+        color: black;
+    }
+
+    60% {
+        background-color: navy;
+        color: white;
+    }
+
+    80% {
+        background-color: rgb(235, 68, 12);
+        color: white;
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+
+/* -------------------------------------------- stats ---------------------------------- */
+.stats{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(41, 41, 41);
+    padding: 15px;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.stats-number{
+    width: 300px;
+    height: 125px;
+   
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stats-count{
+    font-size: 50px;
+    color: lawngreen;
+    font-family: "Bebas Neue", sans-serif;
+}
+.stats-label{
+    font-size: 25px;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+}
