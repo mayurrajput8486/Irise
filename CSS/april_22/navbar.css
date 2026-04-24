@@ -36,17 +36,11 @@
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
-.btn{
-    padding: 10px;
-    background-color: navy;
-    border-radius: 10px;
-    font-size: 18px;
-    color: white;
-}
+
 .item:hover{
     cursor: pointer;
 }
-.btn:hover{
-    cursor:grabbing;
+@media screen {
+    
 }
 
