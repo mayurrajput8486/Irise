@@ -1,0 +1,38 @@
+body{
+    background-color: black;
+}
+
+.heading{
+    font-size: 100px;
+    color: crimson;
+}
+
+@media (max-width : 1200px) {
+    body{
+        background-color: blue;
+    }
+    .heading{
+        font-size: 80px;
+    }
+}
+
+@media (max-width : 992px) {
+    body{
+        background-color: green;
+    }
+    .heading{
+        font-size: 60px;
+    }
+}
+
+@media (max-width : 768px) {
+    body{
+        background-color: coral;
+    }
+}
+
+@media (max-width : 576px) {
+    body{
+        background-color: chartreuse;
+    }
+}
