@@ -1,0 +1,46 @@
+/* To defined the variable please use :root selector */
+*{
+    margin: 0;
+}
+:root{
+    --firstColor : orangered;
+    --contentAlign : center;
+    --contentPadding : 10px 15px;
+    --customBorder : 2px solid rgb(212, 128, 238);
+    --myFontColor : rgb(8, 20, 152);
+    --heroBg : #020024;
+    --herobackground : linear-gradient(342deg,rgba(131, 58, 180, 1) 17%, rgba(253, 29, 29, 1) 58%, rgba(252, 176, 69, 1) 100%);
+}
+
+.heading{
+    color : var(--myFontColor);
+    text-align: var(--contentAlign);
+    background-color: var(--contentBg);
+    padding: var(--contentPadding);
+    border-bottom: var(--customBorder);
+    background: var(--heroBg);
+    background: var(--herobackground);
+}
+.container{
+    background-color: var(--contentBg);
+    width: 100%;
+    height: 350px;
+    border-bottom: var(--customBorder);
+    display: flex;
+}
+.sidebar{
+    width: 30%;
+    height: 350px;
+    border-right: var(--customBorder);
+    color : var(--myFontColor);
+    background: var(--herobackground);
+}
+.content{
+    background-color: black;
+    width: 70%;
+    height: 350px;
+    background: var(--herobackground);
+}
+
+
+
