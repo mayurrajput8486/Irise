@@ -29,7 +29,7 @@
     display: flex;
 }
 .sidebar{
-    width: 30%;
+    width:calc(30% - 250px);
     height: 350px;
     border-right: var(--customBorder);
     color : var(--myFontColor);
