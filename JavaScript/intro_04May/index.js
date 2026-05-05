@@ -17,3 +17,5 @@ console.log(evenElement)
 let str1 = 'Welcome'
 console.log(typeof(str1))
 console.log(Array.isArray(str1))
+
+
