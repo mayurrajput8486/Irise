@@ -57,7 +57,6 @@ function parent () {
         let num2 = 30
         
         function grandChild () {
-            let num2 = 100;
             let sum = num1 + num2
             console.log('sum = ',sum)
         }
