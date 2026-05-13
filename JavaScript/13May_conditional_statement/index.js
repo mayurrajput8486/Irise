@@ -121,7 +121,25 @@ console.log(sum(4,5))
 //spread - merge, copy
 //rest - multiple function argument, staore the value in array or object
 
+function additionThree (...digit) {
+    let total = 0
+    for(let i = 0;i < digit.length; i++){
+        //i = 1; 1 < 10
+        //i=2  ; 2 < 10
+        //i = 3; 3 < 10
+        // i = 11; 11 < 10   false
+        total = total + digit[i]
+        //0 + 1 = 1
+        //1 + 2 = 3
+        //3 + 3 = 6
+        //total+=digit[i]
+    }
+    return total;
+}
+console.log(additionThree(1,2,3,4,5,6,7,8,9,10))
 
+//for...in
+//for...of
 
 
 
