@@ -118,6 +118,7 @@ function sum (...num) {
 console.log(sum(1,2,3,4,5))
 console.log(sum(4,5))
 
+
 //spread - merge, copy
 //rest - multiple function argument, staore the value in array or object
 
