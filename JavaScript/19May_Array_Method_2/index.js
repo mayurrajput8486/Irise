@@ -106,10 +106,6 @@ console.log(emp) */
 
 
 
-
-
-
-
 //Each item add 18% GST
 //lets consider - item - 100RS - 18% applicable = 118
 //price + price*18/100 - GST
