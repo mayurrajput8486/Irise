@@ -66,14 +66,14 @@ const students = [
 
 const stduentsGrade = students.map((stu)=>{
     if(stu.marks >= 90){
-        return {...stu,grade : stu.grade = 'A'}
+        return {...stu,grade : 'A'}
         //       key   :  value
     }else if(stu.marks >= 80){
-        return {...stu,grade : stu.grade = 'B'}
+        return {...stu,grade : 'B'}
     }else if(stu.marks >= 40){
-        return {...stu,grade : stu.grade = 'C'}
+        return {...stu,grade : 'C'}
     }else{
-        return {...stu,grade : stu.grade = 'Fail'}
+        return {...stu,grade : 'Fail'}
     }
 
     //...stu, ternary operator
@@ -100,9 +100,6 @@ console.log(dashBoard)
 emp.age = 35
 emp.contact = 7744556633
 console.log(emp) */
-
-
-
 
 
 
