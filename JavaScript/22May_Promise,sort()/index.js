@@ -130,6 +130,12 @@ const tasks = [
     {task : 'Code review', priority : 'medium'},
     {task : 'testing', priority : 'high'}
 ] 
+const priorityRank = {
+    high : 1,
+    medium : 2,
+    low : 3
+}
+
 //expected - high, medium, low
 //expected - low, medium, high
 
