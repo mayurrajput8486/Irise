@@ -159,3 +159,6 @@ Promise.resolve().then(() => {
 
 console.log("F");
 //A F C E B D
+
+
+
