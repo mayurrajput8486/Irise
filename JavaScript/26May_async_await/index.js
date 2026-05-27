@@ -66,6 +66,7 @@ async function fetchAPIdata (url) {
 function cancleAPI () {
     controller.abort()
 }
+
 //fetchAPIdata('https://dummyjson.com/users')
 //fetchAPIdata('https://dummyjson.com/posts')
 
@@ -81,6 +82,32 @@ function cancleAPI () {
     body : JSON.stringify({name : 'Virat', age : 35})
 }) */
 
+//call API function - https://dummyjson.com/quotes
+//axios.get(), axios.post(), axios.put()
+async function fetchQuotes (url) {
+    try {
+       let response = await fetch(url)
+        //response - error - response.ok  ---- false -----> !false ------> true
+       //if(true)
+
+       if(!response.ok){
+        throw new Error(`HTTP Error - ${response.status} : ${response.statusText}`)
+       }
+       let result = await response.json()
+       console.log(result) 
+    } catch (error) {
+        console.log('Failed to get data !!!')
+    }finally{
+       console.log('Promise End !!')
+    }
+}
+fetchQuotes('https://dummyjson.com/quotes')
+
+
+/* let success = false
+if(!success){
+    console.log('I am success')
+} */
 
 
 
