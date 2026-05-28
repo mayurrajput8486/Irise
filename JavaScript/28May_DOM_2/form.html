@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup with LocalStorage Theme</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            color: #333333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.4s, color 0.4s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        .signup-card {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            transition: background-color 0.4s, box-shadow 0.4s;
+            position: relative;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666666;
+            font-size: 14px;
+            margin-bottom: 24px;
+            transition: color 0.4s;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #333333;
+            transition: all 0.3s;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Toogle Button */
+        .themebtn{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background-color: transparent;
+            border-radius: 20px;
+            padding: 3px 8px;
+        }
+
+        /* Document dark mode */
+        .dark-mode{
+            background-color: black;
+        }
+
+        .dark-mode .signup-card{
+            background-color: #333333;
+        }
+
+        .dark-mode .card-title{
+            color: lawngreen;
+        }
+
+        .dark-mode label{
+            color: lawngreen;
+        }
+
+        .dark-mode .submit-btn{
+            background-color: yellow;
+            color: black;
+        }
+
+        .dark-mode .themebtn{
+            background-color: rgb(200, 231, 74);
+            border-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="signup-card" id="userSignup">
+
+        <!-- Toggle Button -->
+        <button id="btn" class="themebtn" onclick="toggleTheme()">Dark Mode</button>
+       
+        <h2 class="card-title">Create Account</h2>
+        <p class="subtitle">It's quick and easy.</p>
+
+        <form id>
+            <div class="input-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" placeholder="Ex. Virat Kohli" required>
+            </div>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter Username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Repeat your password" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+    </div>
+    <script src="./form.js"></script>
+</body>
+
+</html>

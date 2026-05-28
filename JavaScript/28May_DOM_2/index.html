@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            background-color: black;
+            color: lawngreen;
+            padding: 10px;
+            text-align: center;
+        }
+        .container{
+            border: 2px solid;
+            padding: 20px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM in JavaScript</h1>
+    <!-- <div id="content1">
+        JavaScript is most Popular Lang in the World.
+    </div>
+    <div id="content">
+        React is JavaScript FrontEnd Library which is used to create SPA
+    </div>
+    <div class="content2">
+        React is developed by Facebook in 2011
+    </div>
+    <div class="content2">
+        React uses React Fiber to Improve the performance of Application
+    </div>
+    <p class="content2">
+        Current react version is v19
+    </p> -->
+
+    <h2 id="content">I am Toggle content</h2>
+
+    <button onclick="changeCSS ()">
+        Apply CSS
+    </button>
+    <br><br>
+    <div class="container">
+        <img id="bulb" src="pic_bulboff.gif" alt="bulboff"/>
+
+        <br>
+        <button onclick="bulbmode ()">ON</button>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
