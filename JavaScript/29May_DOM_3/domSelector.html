@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis vero dignissimos nisi velit temporibus architecto a quis officia, tenetur saepe officiis, quisquam maxime. Temporibus, a.
+    </div>
+
+    <div class="text1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, perferendis?
+    </div>
+
+    <div class="text1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste animi necessitatibus, pariatur ipsum velit consectetur.
+    </div>
+    <div id="text">
+        Learn querySelector() and querySelector()
+    </div>
+     <div id="text">
+        Learn querySelector() and querySelector()
+    </div>
+
+
+    <script>
+        //const divId = document.getElementById('text1')
+        //id must be unique and jvascript only target first id if multiple ids are same
+        //console.log(divId);
+
+        /* const divClass = document.getElementsByClassName('text1')
+        console.log(divClass);
+
+        for(let i=0; i < divClass.length;i++){
+            divClass[i].style.color = 'red'
+        } */
+
+        const divTag = document.getElementsByTagName('div')
+        console.log(divTag)
+
+        /* for(let i=0; i < divTag.length; i++){
+            divTag[i].style.fontSize = '30px'
+        } */
+
+        //querySelector('') - class - . or id - #
+        //querySelectorAll()
+        
+        const ele1 = document.querySelectorAll('#text')
+        console.log(ele1);
+
+        ele1.forEach((a)=>{
+            a.style.backgroundColor = 'red'
+        })
+
+        //ele1.style.color = 'blue'
+
+        const ele2 = document.querySelector('.text1')
+        console.log(ele2)
+
+        const ele3 = document.querySelectorAll('div')
+        console.log(ele3);
+
+
+
+       /*  ele3.forEach((a)=>{
+            a.style.color = 'red'
+        }) */
+        
+
+
+    </script>
+</body>
+</html>

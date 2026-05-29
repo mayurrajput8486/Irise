@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./calculator.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="screen" id="result"></div>
+            <div class="buttons">
+                <button class="btn" onclick="showValue('1')">1</button>
+                <button class="btn" onclick="showValue('2')">2</button>
+                <button class="btn" onclick="showValue('3')">3</button>
+                <button class="btn operator" onclick="showValue('+')">+</button>
+                
+                <button class="btn" onclick="showValue('4')">4</button>
+                <button class="btn" onclick="showValue('5')">5</button>
+                <button class="btn" onclick="showValue('6')">6</button>
+                <button class="btn operator" onclick="showValue('-')">-</button>
+
+                <button class="btn" onclick="showValue('7')">7</button>
+                <button class="btn" onclick="showValue('8')">8</button>
+                <button class="btn" onclick="showValue('9')">9</button>
+                <button class="btn operator" onclick="showValue('*')">*</button>
+                
+                <button class="btn" onclick="showValue('0')">0</button>
+                <button class="btn" onclick="showValue('.')">.</button>
+                <button class="btn operator" onclick="showValue('/')">/</button>
+
+                <button class="btn operator" onclick="solveExpression ()">=</button>
+
+                <button class="btn clear" onclick="clearScreen ()">Clear</button>
+                <button class="btn clearEntry" onclick="clearLastentry ()">&#9003;</button>
+            </div>
+        </div>
+    </div>
+    <script src="./calculator.js"></script>
+</body>
+</html>
+
+
+
