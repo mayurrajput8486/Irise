@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup with LocalStorage Theme</title>
+    <title>Signup with validation</title>
     <link rel="stylesheet" href="./form.css">
 </head>
 
@@ -18,25 +18,65 @@
         <h2 class="card-title">Create Account</h2>
         <p class="subtitle">It's quick and easy.</p>
 
-        <form >
+        <!-- novalidate - turn off the browser built-in side validation  -->
+        <form novalidate>
             <div class="input-group">
                 <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" placeholder="Ex. Virat Kohli" required>
+                <input 
+                    type="text" 
+                    id="fullname" 
+                    placeholder="Ex. Virat Kohli" 
+                    required
+                    oninput="checkField('fullname')"
+                >
+                <!-- Error message - hidden by default, show when input is wrong -->
+                 <p class="err-msg" id="fullname-err">
+                    Only letters and spaces are allowed. Minimum 2 Character.
+                 </p>
             </div>
 
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter Username" required>
+                <input type="text" id="username" placeholder="Enter Username" required oninput="checkField('username')">
+                <!-- Error message - hidden by default, show when input is wrong -->
+                <p class="err-msg" id="username-err">
+                    Letters, numbers and underscore only. 4 to 15 characters.
+                </p>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Ex. virat@gmail.com" required oninput="checkField('email')">
+                <!-- Error message - hidden by default, show when input is wrong -->
+                <p class="err-msg" id="email-err">
+                    Enter a valid email. Example : name@domain.com
+                </p>
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Ex. 7711223366" required oninput="checkField('phone')">
+                <!-- Error message - hidden by default, show when input is wrong -->
+                <p class="err-msg" id="phone-err">
+                    Enter valid 10-digit mobile number. Stating with 6, 7, 8 and 9
+                </p>
             </div>
 
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Create a password" required>
+                <input type="password" id="password" placeholder="Create a password" required oninput="checkField('password')">
+                <!-- Error message - hidden by default, show when input is wrong -->
+                <p class="err-msg" id="password-err">
+                    Min 5 characters and Max 10 character. Must include uppercase, lowercase, number and special character (@, $, %, &, _).
+                </p>
             </div>
 
             <div class="input-group">
                 <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" placeholder="Repeat your password" required>
+                <input type="password" id="confirmPassword" placeholder="Repeat your password" required oninput="checkField('confirmPassword')">
+                <p class="err-msg" id="confirmPassword-err">
+                    Password do not match.
+                </p>
             </div>
 
             <button type="submit" class="submit-btn">Sign Up</button>

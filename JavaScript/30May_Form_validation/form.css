@@ -55,6 +55,12 @@ h2 {
     background-color: rgb(255, 255, 255);
     color: rgb(51, 51, 51);
     transition: all 0.3s;
+    outline: none;
+}
+
+.input-group input:focus{
+    border-color: rgb(84, 232, 230);
+    box-shadow: 0px 0px 2px 1px rgb(84, 232, 230);
 }
 
 .submit-btn {
@@ -85,6 +91,37 @@ h2 {
     padding: 3px 8px;
 }
 
+/* Validation classes for Error  */
+.err-msg{
+    color: red;
+    font-size: 13px;
+    display: none;
+}
+
+/* VALID-INPUT - green border or outline for input field */
+.input-group input.valid{
+    border: 1.5px solid greenyellow;
+}
+
+/* INVALID-INPUT - red border or outline for input field */
+.input-group input.invalid{
+    border: 1.5px solid red;
+}
+
+/* Add class 'show via JavaScript to make it visible using classList.add('show') */
+
+.err-msg.show{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
 /* Document dark mode */
 .dark-mode {
     background-color: black;
@@ -110,4 +147,12 @@ h2 {
 .dark-mode .themebtn {
     background-color: rgb(200, 231, 74);
     border-color: aqua;
+}
+
+.dark-mode .input-group input.valid{
+    border: 1.5px solid greenyellow;
+}
+
+.dark-mode .input-group input.invalid{
+    border: 1.5px solid red;
 }
