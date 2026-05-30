@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup with LocalStorage Theme</title>
+    <link rel="stylesheet" href="./form.css">
+</head>
+
+<body>
+
+    <div class="signup-card" id="userSignup">
+
+        <!-- Toggle Button -->
+        <button id="btn" class="themebtn" onclick="toggleTheme()">Dark Mode</button>
+       
+        <h2 class="card-title">Create Account</h2>
+        <p class="subtitle">It's quick and easy.</p>
+
+        <form >
+            <div class="input-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" placeholder="Ex. Virat Kohli" required>
+            </div>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter Username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Repeat your password" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+    </div>
+    <script src="./form.js"></script>
+</body>
+</html>
