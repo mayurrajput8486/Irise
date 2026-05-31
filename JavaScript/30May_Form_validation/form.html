@@ -19,7 +19,7 @@
         <p class="subtitle">It's quick and easy.</p>
 
         <!-- novalidate - turn off the browser built-in side validation  -->
-        <form novalidate>
+        <form novalidate onsubmit="submitForm()">
             <div class="input-group">
                 <label for="fullname">Full Name</label>
                 <input 
@@ -37,7 +37,12 @@
 
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter Username" required oninput="checkField('username')">
+                <input 
+                    type="text" 
+                    id="username" 
+                    placeholder="Enter Username" 
+                    required 
+                    oninput="checkField('username')">
                 <!-- Error message - hidden by default, show when input is wrong -->
                 <p class="err-msg" id="username-err">
                     Letters, numbers and underscore only. 4 to 15 characters.
@@ -46,7 +51,12 @@
 
             <div class="input-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Ex. virat@gmail.com" required oninput="checkField('email')">
+                <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="Ex. virat@gmail.com" 
+                    required 
+                    oninput="checkField('email')">
                 <!-- Error message - hidden by default, show when input is wrong -->
                 <p class="err-msg" id="email-err">
                     Enter a valid email. Example : name@domain.com
@@ -55,7 +65,12 @@
 
             <div class="input-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="Ex. 7711223366" required oninput="checkField('phone')">
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    placeholder="Ex. 7711223366" 
+                    required 
+                    oninput="checkField('phone')">
                 <!-- Error message - hidden by default, show when input is wrong -->
                 <p class="err-msg" id="phone-err">
                     Enter valid 10-digit mobile number. Stating with 6, 7, 8 and 9
@@ -64,7 +79,12 @@
 
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Create a password" required oninput="checkField('password')">
+                <input 
+                    type="password" 
+                    id="password" 
+                    placeholder="Create a password" 
+                    required 
+                    oninput="checkField('password')">
                 <!-- Error message - hidden by default, show when input is wrong -->
                 <p class="err-msg" id="password-err">
                     Min 5 characters and Max 10 character. Must include uppercase, lowercase, number and special character (@, $, %, &, _).
@@ -73,13 +93,21 @@
 
             <div class="input-group">
                 <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" placeholder="Repeat your password" required oninput="checkField('confirmPassword')">
+                <input 
+                    type="password" 
+                    id="confirmPassword" 
+                    placeholder="Repeat your password" 
+                    required 
+                    oninput="checkField('confirmPassword')">
                 <p class="err-msg" id="confirmPassword-err">
                     Password do not match.
                 </p>
             </div>
 
             <button type="submit" class="submit-btn">Sign Up</button>
+
+            <!-- Success message - hidden until form is valid and submitted -->
+            <p class="success-msg" id="successMsg"> ✅Account Created !! Open console to user details</p>
         </form>
     </div>
     <script src="./form.js"></script>

@@ -58,10 +58,10 @@ h2 {
     outline: none;
 }
 
-.input-group input:focus{
+/* .input-group input:focus{
     border-color: rgb(84, 232, 230);
     box-shadow: 0px 0px 2px 1px rgb(84, 232, 230);
-}
+} */
 
 .submit-btn {
     width: 100%;
@@ -91,6 +91,13 @@ h2 {
     padding: 3px 8px;
 }
 
+/* Success Message */
+.success-msg{
+    color: lawngreen;
+    font-size: 17px;
+    display: none;
+}
+
 /* Validation classes for Error  */
 .err-msg{
     color: red;
@@ -100,7 +107,7 @@ h2 {
 
 /* VALID-INPUT - green border or outline for input field */
 .input-group input.valid{
-    border: 1.5px solid greenyellow;
+    border: 1.5px solid green;
 }
 
 /* INVALID-INPUT - red border or outline for input field */
@@ -113,10 +120,6 @@ h2 {
 .err-msg.show{
     display: block;
 }
-
-
-
-
 
 
 
