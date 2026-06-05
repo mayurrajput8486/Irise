@@ -1,0 +1,9 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.hero{
+  background-color: orangered;
+  color: aliceblue;
+  padding: 15px;
+}
