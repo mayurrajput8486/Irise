@@ -160,8 +160,8 @@ function checkField(id) {
     return isValid;
 }
 
-/* Submit Form Function */
-function submitForm() {
+/* To submit form create function */
 
+function submitForm () {
+    
 }
-
