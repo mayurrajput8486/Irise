@@ -1,0 +1,16 @@
+.hero{
+    text-decoration: underline;
+    text-align: center;
+}
+.card{
+    background-color: black;
+    width: 300px;
+    color: lawngreen;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+.cardImg{
+    display: flex;
+    justify-content: center;
+}
