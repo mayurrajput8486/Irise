@@ -1,0 +1,19 @@
+.date{
+    border: 2px solid white;
+    padding: 5px 15px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: navy;
+}
+.year{
+    font-size: 12px;
+    font-weight: bold;
+}
+.month{
+    font-size: 12px;
+    font-weight: bold;
+}
+.current_date{
+    font-size: 18px;
+    font-weight: bold;
+}
