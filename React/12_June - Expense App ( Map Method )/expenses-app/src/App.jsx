@@ -12,20 +12,16 @@ const App = () =>{
     { id: 7, date : new Date(2026, 5 , 12), title : 'Electricity Bill', amount : 2300}
     
   ]
-  console.log(expense_data)
-  expense_data.splice(2,1)
-  console.log(expense_data)
 
   return(
     <div className='card'>
-        <h1>Expenses App</h1>
+        <h1 className='text-center text-2xl'>Monthly Expenses</h1>
         {/* 
         <ExpenseItem date={expense_data[0].date} title={expense_data[0].title} amount={expense_data[0].amount}/>
         <ExpenseItem date={expense_data[1].date} title={expense_data[1].title} amount={expense_data[1].amount}/>
         <ExpenseItem date={expense_data[2].date} title={expense_data[2].title} amount={expense_data[2].amount}/>
         <ExpenseItem date={expense_data[3].date} title={expense_data[3].title} amount={expense_data[3].amount}/>
         <ExpenseItem date={expense_data[4].date} title={expense_data[4].title} amount={expense_data[4].amount}/> */}
-
         {
           expense_data.map((expense)=>{
             return(

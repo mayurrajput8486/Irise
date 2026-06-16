@@ -4,8 +4,7 @@ const Counter = () => {
   const [cart, setCart] = useState(0);
 
   const increment = () => {
-    setCart(cart + 1);
-    //setCart((prev)=> prev + 1)
+    setCart(cart + 1)
   };
 
   const decrement = () => {
