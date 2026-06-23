@@ -1,8 +1,10 @@
-import Expenses from "./components/Expenses";
+//import Expenses from "./components/Expenses";
+import FormHandling from "./components/FormHandling";
 const App = () =>{
   return(
-    <div className="bg-gray-400 p-4 h-dvh">
-      <Expenses/>
+    <div >
+     {/*  <Expenses/> */}
+     <FormHandling/>
     </div>
   )
 }
