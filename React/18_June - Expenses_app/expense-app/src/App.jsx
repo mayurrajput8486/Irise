@@ -1,10 +1,10 @@
-//import Expenses from "./components/Expenses";
-import FormHandling from "./components/FormHandling";
+import Expenses from "./components/Expenses";
+//import FormHandling from "./components/FormHandling";
 const App = () =>{
   return(
     <div >
-     {/*  <Expenses/> */}
-     <FormHandling/>
+      <Expenses/>
+  {/*    <FormHandling/> */}
     </div>
   )
 }
