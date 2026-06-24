@@ -4,23 +4,34 @@ const Expenses = () => {
   const [date, setDate] = useState("");
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
+  const [category, setCategory] = useState("");
+
   const [expense, setExpense] = useState([]);
+  const [error,setError] = useState("")
 
   const handleExpense = (event) => {
-    event.preventDefault()
+    event.preventDefault();   //prevent from page reload 
+    const isValid = date && title && Number(amount) > 0 && category;
 
-    const newExpense = {
-      id: Date.now(),
-      date,
-      title,
-      amount,
-    };
+    if (isValid) {
+      const newExpense = {
+        id: Date.now(),
+        date,
+        title,
+        amount,
+        category,
+      };
 
-    setExpense((prev)=>[...prev,newExpense]);
+      setExpense([...expense, newExpense]);
 
-    setDate("")
-    setTitle("")
-    setAmount("")
+      setDate("");
+      setTitle("");
+      setAmount("");
+      setCategory("");
+      setError("")
+    }else{
+      setError("All Field Are Required !!!")
+    }
   };
   /* Formik library (form state) and  Yup library (validation schema) */
 
@@ -37,7 +48,6 @@ const Expenses = () => {
             type="date"
             autoComplete="expense-date"
             className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-            required
             value={date}
             onChange={(event) => setDate(event.target.value)}
           />
@@ -50,7 +60,6 @@ const Expenses = () => {
             autoComplete="expensetitle"
             placeholder="Enter Title"
             className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-            required
             value={title}
             onChange={(event) => setTitle(event.target.value)}
           />
@@ -64,11 +73,26 @@ const Expenses = () => {
             autoComplete="street-address"
             placeholder="Enter Amount"
             className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-            required
             value={amount}
             onChange={(event) => setAmount(event.target.value)}
           />
         </div>
+        <div className="mt-2">
+          <select
+            className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-gray-400 outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+            value={category}
+            onChange={(event) => setCategory(event.target.value)}
+          >
+            <option value="">Select Category</option>
+            <option value="EMI">EMI</option>
+            <option value="Grossary">Grossary</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+          </select>
+        </div>
+
         <div className="mt-2 flex justify-center">
           <button className="bg-blue-900 p-3 rounded-2xl w-100 font-bold">
             Add Expense
@@ -76,15 +100,28 @@ const Expenses = () => {
         </div>
       </form>
 
+      {/* Error Message */}
+      <div className="text-red-600 text-center">
+        {error}
+      </div>
+
       {/* Expense Data */}
       <div className="bg-black p-3 rounded-2xl mt-5">
         <h1 className="text-2xl font-bold text-center">Monthly Expense </h1>
         {expense.map((item) => {
           return (
-            <div className="mb-2">
-              <div>{item.date}</div>
+            <div className="mb-2 flex justify-between items-center bg-gray-700 p-3 rounded-2xl mt-3">
+              <div className="border-2 p-2 text-center bg-black text-orange-300 rounded-2xl">
+                {/* Date() Object Method - new Date({item.date}) */}
+                <div>{new Date(item.date).getFullYear()}</div>
+                <div>
+                  {new Date(item.date).toLocaleString("en", { month: "long" })}
+                </div>
+                <div>{new Date(item.date).getDay()}</div>
+              </div>
               <div>{item.title}</div>
               <div>{item.amount}</div>
+              <div>{item.category}</div>
             </div>
           );
         })}

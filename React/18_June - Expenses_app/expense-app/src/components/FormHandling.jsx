@@ -3,6 +3,7 @@ const FormHandling = () => {
     const [date, setDate] = useState("")
     const [fullname, setFullname] = useState("")
     const [email, setEmail] = useState("")
+    
     const [users, setUsers] = useState([])
 
     /* const dateHandler = (event) =>{
