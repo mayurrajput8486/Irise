@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        localStorage.setItem("title","Car EMI")
+        const data = localStorage.getItem("title")
+        console.log(data)
+        localStorage.setItem("expense",{"title" : "Zomato", "amount" : "1500"})
+        JSON.parse() //get object from locaStorage
+        JSON.stringify() //object convert to string
+
+        //getItem -- data read -- JSON.parse()
+        //setItem -- set data  -- JSON.stringify()
+    </script>
+</body>
+</html>

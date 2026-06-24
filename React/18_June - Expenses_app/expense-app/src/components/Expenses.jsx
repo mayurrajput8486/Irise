@@ -6,11 +6,14 @@ const Expenses = () => {
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
 
-  const [expense, setExpense] = useState([]);
-  const [error,setError] = useState("")
+  const [expense, setExpense] = useState(()=>{
+    const data = localStorage.getItem("expense")
+    return data ? JSON.parse(data) : []
+  });
+  const [error, setError] = useState("");
 
   const handleExpense = (event) => {
-    event.preventDefault();   //prevent from page reload 
+    event.preventDefault(); //prevent from page reload
     const isValid = date && title && Number(amount) > 0 && category;
 
     if (isValid) {
@@ -21,18 +24,32 @@ const Expenses = () => {
         amount,
         category,
       };
+    
+      const updateExpense = [...expense, newExpense] //it hold updated record 
+      setExpense(updateExpense); //UI ke upar data update karana
 
-      setExpense([...expense, newExpense]);
+      //setExpense([...expense, newExpense])
+
+      //Store Data in localStorage - setItem()
+      localStorage.setItem("expense",
+        JSON.stringify(updateExpense)
+      ) //Set data in localStorage
 
       setDate("");
       setTitle("");
       setAmount("");
       setCategory("");
-      setError("")
-    }else{
-      setError("All Field Are Required !!!")
+      setError("");
+    } else {
+      setError("All Field Are Required !!!");
     }
   };
+
+  /* Delete  */
+  //filter()
+  const deleteExpense = () =>{
+
+  }
   /* Formik library (form state) and  Yup library (validation schema) */
 
   return (
@@ -101,17 +118,15 @@ const Expenses = () => {
       </form>
 
       {/* Error Message */}
-      <div className="text-red-600 text-center">
-        {error}
-      </div>
+      <div className="text-red-600 text-center">{error}</div>
 
       {/* Expense Data */}
       <div className="bg-black p-3 rounded-2xl mt-5">
         <h1 className="text-2xl font-bold text-center">Monthly Expense </h1>
         {expense.map((item) => {
           return (
-            <div className="mb-2 flex justify-between items-center bg-gray-700 p-3 rounded-2xl mt-3">
-              <div className="border-2 p-2 text-center bg-black text-orange-300 rounded-2xl">
+            <div className="mb-2 flex justify-between items-center bg-gray-700 p-3 rounded-2xl mt-3" key={item.id} >
+              <div className="border-2 p-2 text-center bg-black text-orange-300 rounded-2xl" >
                 {/* Date() Object Method - new Date({item.date}) */}
                 <div>{new Date(item.date).getFullYear()}</div>
                 <div>
@@ -122,6 +137,9 @@ const Expenses = () => {
               <div>{item.title}</div>
               <div>{item.amount}</div>
               <div>{item.category}</div>
+              <div>
+                <button className="bg-red-600 border-2 p-2" onClick={deleteExpense}>Delete</button>
+              </div>
             </div>
           );
         })}
