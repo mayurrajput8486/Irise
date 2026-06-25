@@ -6,15 +6,19 @@ const Expenses = () => {
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
 
-  const [expense, setExpense] = useState(()=>{
-    const data = localStorage.getItem("expense")
-    return data ? JSON.parse(data) : []
+  const [expense, setExpense] = useState(() => {
+    const data = localStorage.getItem("expense");
+    return data ? JSON.parse(data) : [];
   });
+  //const [expense, setExpense] = useState([]);
   const [error, setError] = useState("");
 
+  //state for search
+  const [search, setSearch] = useState('')
+
   const handleExpense = (event) => {
-    event.preventDefault(); //prevent from page reload
-    const isValid = date && title && Number(amount) > 0 && category;
+    event.preventDefault();
+    const isValid = date && title.trim() && Number(amount) > 0 && category;
 
     if (isValid) {
       const newExpense = {
@@ -24,16 +28,13 @@ const Expenses = () => {
         amount,
         category,
       };
-    
-      const updateExpense = [...expense, newExpense] //it hold updated record 
-      setExpense(updateExpense); //UI ke upar data update karana
 
-      //setExpense([...expense, newExpense])
+      //Data stored in localStorage - setItem(key, value) --- JSON.stringify()
+      const updateExpense = [...expense, newExpense];
+      setExpense(updateExpense); //for UI update
 
-      //Store Data in localStorage - setItem()
-      localStorage.setItem("expense",
-        JSON.stringify(updateExpense)
-      ) //Set data in localStorage
+      //for localStorage
+      localStorage.setItem("expense", JSON.stringify(updateExpense));
 
       setDate("");
       setTitle("");
@@ -41,16 +42,29 @@ const Expenses = () => {
       setCategory("");
       setError("");
     } else {
-      setError("All Field Are Required !!!");
+      setError("All Fields are Required !!!");
     }
   };
 
-  /* Delete  */
-  //filter()
-  const deleteExpense = () =>{
+  //to update data or delete we always prefere id
+  //delete feature
+  const deleteExpense = (id) => {
+    const latestExpense = expense.filter((item) => item.id !== id);
 
-  }
-  /* Formik library (form state) and  Yup library (validation schema) */
+    //Data update on UI - setExpense()
+    setExpense(latestExpense)
+
+    localStorage.setItem("expense",
+      JSON.stringify(latestExpense)
+    )
+
+  };
+
+  //filter data 
+  const filterExpense = expense.filter((item)=>  item.category.toLowerCase().includes(search.toLowerCase())
+  )
+  console.log(filterExpense)
+  console.log(search)
 
   return (
     <div className="bg-gray-800 p-3 text-white rounded-2xl">
@@ -58,6 +72,12 @@ const Expenses = () => {
         Welcome to Expense App
       </h2>
       <form onSubmit={handleExpense}>
+        <input 
+          type="searcg" 
+          placeholder="Search Category" className="border-2 rounded-2xl p-2"
+          value={search}
+          onChange={(event)=>setSearch(event.target.value)}
+        />
         <div className="mt-2">
           <input
             id="expensedate"
@@ -123,10 +143,13 @@ const Expenses = () => {
       {/* Expense Data */}
       <div className="bg-black p-3 rounded-2xl mt-5">
         <h1 className="text-2xl font-bold text-center">Monthly Expense </h1>
-        {expense.map((item) => {
+        {filterExpense.map((item) => {
           return (
-            <div className="mb-2 flex justify-between items-center bg-gray-700 p-3 rounded-2xl mt-3" key={item.id} >
-              <div className="border-2 p-2 text-center bg-black text-orange-300 rounded-2xl" >
+            <div
+              className="mb-2 flex justify-between items-center bg-gray-700 p-3 rounded-2xl mt-3"
+              key={item.id}
+            >
+              <div className="border-2 p-2 text-center bg-black text-orange-300 rounded-2xl">
                 {/* Date() Object Method - new Date({item.date}) */}
                 <div>{new Date(item.date).getFullYear()}</div>
                 <div>
@@ -138,7 +161,12 @@ const Expenses = () => {
               <div>{item.amount}</div>
               <div>{item.category}</div>
               <div>
-                <button className="bg-red-600 border-2 p-2" onClick={deleteExpense}>Delete</button>
+                <button
+                  className="border-2 p-3 rounded-2xl bg-black"
+                  onClick={() => deleteExpense(item.id)}
+                >
+                  ❌
+                </button>
               </div>
             </div>
           );
