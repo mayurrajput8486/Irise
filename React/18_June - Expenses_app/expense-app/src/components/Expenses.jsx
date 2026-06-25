@@ -63,9 +63,7 @@ const Expenses = () => {
   //filter data 
   const filterExpense = expense.filter((item)=>  item.category.toLowerCase().includes(search.toLowerCase())
   )
-  console.log(filterExpense)
-  console.log(search)
-
+ 
   return (
     <div className="bg-gray-800 p-3 text-white rounded-2xl">
       <h2 className="text-2xl text-center font-bold mb-10">
