@@ -61,6 +61,7 @@ const Expenses = () => {
   };
 
   //filter data 
+  //expense - [] hold all records 
   const filterExpense = expense.filter((item)=>  item.category.toLowerCase().includes(search.toLowerCase())
   )
  
@@ -141,7 +142,8 @@ const Expenses = () => {
       {/* Expense Data */}
       <div className="bg-black p-3 rounded-2xl mt-5">
         <h1 className="text-2xl font-bold text-center">Monthly Expense </h1>
-        {filterExpense.map((item) => {
+        {
+          filterExpense.map((item) => {
           return (
             <div
               className="mb-2 flex justify-between items-center bg-gray-700 p-3 rounded-2xl mt-3"
