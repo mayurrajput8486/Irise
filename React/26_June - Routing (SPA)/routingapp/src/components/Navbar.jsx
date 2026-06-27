@@ -22,22 +22,22 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink className="nav-link active text-light fw-bold" aria-current="page" to="/home">
+                <NavLink className={({isActive})=> isActive ? "nav-link text-success fw-bold text-decoration-underline link-offset-3" : "nav-link text-light fw-bold"} aria-current="page" to="/home">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-light fw-bold" to="/about">
+                <NavLink className={({isActive})=>isActive ? "nav-link text-success fw-bold text-decoration-underline link-offset-3" : "nav-link text-light fw-bold"}  to="/about">
                   About
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link text-light fw-bold" to="/career">
+                <NavLink className={({isActive})=> isActive ? "nav-link text-success fw-bold text-decoration-underline link-offset-3" : "nav-link text-light fw-bold"}  to="/career">
                   Career
                 </NavLink>
               </li>
                <li className="nav-item">
-                <NavLink className="nav-link text-light fw-bold" to="/contact">
+                <NavLink className={({isActive})=> isActive ? "nav-link text-success fw-bold text-decoration-underline link-offset-3" : "nav-link text-light fw-bold"} to="/contact">
                   Contact
                 </NavLink>
               </li>
