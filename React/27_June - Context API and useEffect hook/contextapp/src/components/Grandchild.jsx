@@ -11,15 +11,17 @@ const Grandchild = ({fullname}) => {
 
 export default Grandchild */
 
-import Grandchild from "./Grandchild"
-
-const Child = () => {
+import GreateGrandChild from './GreateGrandChild'
+import { useContext } from 'react'
+import { Personinfo } from '../context/Context'
+const Grandchild = () => {
+  const details = useContext(Personinfo)
   return (
     <div>
-        <h2>Child Comp</h2>
-        <Grandchild/>
+        <h2>Grandchild Comp - {details.name} - {details.age} - {details.city}</h2>
+        <GreateGrandChild/>
     </div>
   )
 }
 
-export default Child
+export default Grandchild 

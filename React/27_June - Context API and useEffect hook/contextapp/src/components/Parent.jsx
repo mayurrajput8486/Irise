@@ -12,7 +12,6 @@ const Parent = ({fullname}) => {
 export default Parent */
 
 import Child from "./Child"
-
 const Parent = () => {
   return (
     <div>

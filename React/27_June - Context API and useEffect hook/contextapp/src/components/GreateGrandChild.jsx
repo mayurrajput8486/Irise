@@ -7,10 +7,16 @@ const GreateGrandChild = ({fullname}) => {
 
 export default GreateGrandChild */
 
-const GreateGrandChild = () => {
-  return (
-    <h2>GreateGrandChild Name</h2>
-  )
-}
+import { useContext } from "react";
+import { Fullname } from "../context/Context";
 
-export default GreateGrandChild
+const GreateGrandChild = () => {
+  const name = useContext(Fullname)
+  return (
+    <div>
+      <h2>GreateGrandChild Name - {name}</h2>
+    </div>
+  );
+};
+
+export default GreateGrandChild;
