@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- JavaScript is synchronous langauge and single threaded  -->
+    <!-- JavaScript can not handle async operation  -->
+    <!-- When we fetch any data then we get failuer of async operation is a resultant value called promise -->
+    <!-- In Modern JavaScript to handle promise we use async and await  -->
+    <script>
+        
+
+        const getData = async () =>{
+            let response = await fetch('https://dummyjson.com/products')
+            console.log(response)
+            let result = await response.json()
+            console.log(result.products)
+        }
+        getData()
+
+        //fetch method does not handle the error code
+        //In fetch() we have to manually convert the response in JSON.
+    </script>
+</body>
+</html>

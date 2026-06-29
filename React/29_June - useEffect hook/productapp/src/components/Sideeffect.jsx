@@ -19,9 +19,9 @@ const Sideeffect = () => {
   }, []); */
 
   /* This effect is run when count change */
-  /* useEffect(()=>{
+  useEffect(()=>{
     console.log('useEffect run when count change !!!!');
-  },[count ]) */
+  },[count])
 
   useEffect(()=>{
     const interval = setInterval(()=>{
@@ -29,10 +29,10 @@ const Sideeffect = () => {
         //setSecond((prevSecond)=>prevSecond + 1)
     },1000)
 
-    //cleanup function 
     return ()=>{
-        clearInterval(interval)
+      clearInterval(interval)
     }
+
   },[second])
 
   return (
