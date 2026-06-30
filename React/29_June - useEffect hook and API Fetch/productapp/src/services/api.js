@@ -6,3 +6,4 @@ export const apiservice = axios.create({
     //if data get more than 6 second to fetch then you will get an error of timeout
 })
 
+
