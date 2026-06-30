@@ -60,7 +60,7 @@ const ProductsList = () => {
   }
 
   if (error) {
-    return <h1 className="text-red-500">{error}</h1>;
+    return <h1 className="text-red-500 text-3xl text-center">{error}</h1>;
   }
 
   return (
